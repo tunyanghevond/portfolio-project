@@ -19,4 +19,4 @@ closeBtn.addEventListener("click", function () {
   sidebar.classList.remove("show-sidebar");
 });
 // set year
-date.innerHTML = new Date().getFullYear();
+// date.innerHTML = new Date().getFullYear();

@@ -164,6 +164,14 @@ p {
     width: 95vw;
   }
 }
+.underline {
+  width: 5rem;
+  height: 0.25rem;
+  margin-bottom: 1.25rem;
+  background-color: var(--clr-primary-5);
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /*
 =============== 
@@ -203,6 +211,14 @@ Navbar
   .nav {
     background: var(--clr-primary-10);
   }
+  .nav-center {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+  .nav-btn {
+    display: none;
+  }
   .nav-links {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -210,9 +226,7 @@ Navbar
     column-gap: 2rem;
     justify-self: end;
   }
-  .nav-btn {
-    display: none;
-  }
+
   .nav-links a {
     text-transform: capitalize;
     color: var(--clr-grey-1);
@@ -223,11 +237,17 @@ Navbar
   .nav-links a:hover {
     color: var(--clr-primary-5);
   }
-  .nav-center {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-  }
+}
+/* fixed navbar */
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  box-shadow: var(--light-shadow);
 }
 /*
 =============== 
@@ -296,12 +316,65 @@ Sidebar
 .close-btn:hover {
   color: #e66b6b;
 }
+
 /*
 =============== 
 Hero
 ===============
 */
 /* underline added to globals */
+.hero .underline {
+  margin-bottom: 0.5rem;
+  margin-left: 0;
+}
+.hero-img {
+  display: none;
+}
+.hero {
+  background-color: var(--clr-primary-10);
+}
+.hero-center {
+  min-height: calc(100vh - 5rem);
+  display: grid;
+  place-items: center;
+}
+.hero-center h4 {
+  color: var(--clr-grey-5);
+}
+.hero-icons {
+  justify-items: start;
+}
+.hero-btn {
+  margin-top: 1.25rem;
+}
+
+@media screen and (min-width: 772px) {
+  .hero-img {
+    display: block;
+    position: relative;
+  }
+  .hero-center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-photo {
+    max-width: 25rem;
+    max-height: 25rem;
+    object-fit: cover;
+    border-radius: var(--radius);
+    position: relative;
+  }
+  .hero-img::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 0.25rem solid var(--clr-primary-5);
+    position: absolute;
+    top: 1rem;
+    right: -1rem;
+    border-radius: var(--radius);
+  }
+}
 
 /*
 =============== 
